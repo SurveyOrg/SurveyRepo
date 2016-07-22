@@ -6,16 +6,21 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
-public class BaseMode implements Serializable{
+@MappedSuperclass
+public class BaseMode implements Serializable {
 
 	private static final long serialVersionUID = -4808678472740726881L;
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private Long id;
+	/**
+	 * 版本号
+	 */
 	@Version
 	@Column(name = "VERSION")
 	private Long version;
@@ -39,6 +44,5 @@ public class BaseMode implements Serializable{
 	public void setVersion(Long version) {
 		this.version = version;
 	}
-	
-	
+
 }
