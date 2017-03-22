@@ -12,6 +12,7 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Date;
 
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -31,13 +32,11 @@ import org.hibernate.annotations.GenerationTime;
 public class BaseEntity implements Serializable {
 
 	private static final long serialVersionUID = 1652098178707497549L;
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	private long id;
 	/**
 	 * 版本号
 	 */
-	@Version
 	private Long version;
 	/**
 	* delFlag : 删除标记 
@@ -52,9 +51,6 @@ public class BaseEntity implements Serializable {
 	/**
 	* createTime : 创建时间
 	*/
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(columnDefinition = "timestamp default CURRENT_TIMESTAMP")
-	@Generated(GenerationTime.INSERT)
 	private Date createTime;
 	/**
 	* updater : 修改人ID
@@ -63,11 +59,10 @@ public class BaseEntity implements Serializable {
 	/**
 	* updateTime : 最后一次修改时间
 	*/
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(columnDefinition = "timestamp default CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
-	@Generated(GenerationTime.ALWAYS)
 	private Date updateTime;
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public long getId() {
 		return id;
 	}
@@ -76,6 +71,7 @@ public class BaseEntity implements Serializable {
 		this.id = id;
 	}
 
+	@Version
 	public Long getVersion() {
 		return version;
 	}
@@ -84,6 +80,8 @@ public class BaseEntity implements Serializable {
 		this.version = version;
 	}
 
+	@Basic
+	@Column(name = "del_flag")
 	public int getDelFlag() {
 		return delFlag;
 	}
@@ -92,6 +90,8 @@ public class BaseEntity implements Serializable {
 		this.delFlag = delFlag;
 	}
 
+	@Basic
+	@Column(name = "creator")
 	public Long getCreator() {
 		return creator;
 	}
@@ -100,6 +100,10 @@ public class BaseEntity implements Serializable {
 		this.creator = creator;
 	}
 
+	@Basic
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "create_time", columnDefinition = "timestamp default CURRENT_TIMESTAMP")
+	@Generated(GenerationTime.INSERT)
 	public Date getCreateTime() {
 		return createTime;
 	}
@@ -108,6 +112,8 @@ public class BaseEntity implements Serializable {
 		this.createTime = createTime;
 	}
 
+	@Basic
+	@Column(name = "updater")
 	public Long getUpdater() {
 		return updater;
 	}
@@ -120,6 +126,10 @@ public class BaseEntity implements Serializable {
 		return updateTime;
 	}
 
+	@Basic
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "update_time", columnDefinition = "timestamp default CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
+	@Generated(GenerationTime.ALWAYS)
 	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
 	}
