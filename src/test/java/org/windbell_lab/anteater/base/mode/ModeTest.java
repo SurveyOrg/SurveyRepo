@@ -28,6 +28,9 @@ public class ModeTest {
 		CmChannelEntity entity = new CmChannelEntity();
 		entity.setChannelName("ChannelName");
 		repository.save(entity);
+		entity = repository.findOne(1L);
+		entity.setCreator(111L);
+		repository.save(entity);
 	}
 
 }

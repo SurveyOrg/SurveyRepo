@@ -5,32 +5,33 @@ import java.sql.Timestamp;
 
 /**
  * Created by morning on 2017/3/20.
+ * 菜单信息
  */
 @Entity
 @Table(name = "sm_menu")
 public class SmMenuEntity extends BaseEntity {
 	private static final long serialVersionUID = -3193875207328443281L;
-	private long id;
+	/**
+	* menuCode : 菜单编码
+	*/ 
 	private long menuCode;
+	/**
+	* menuName : 菜单名称
+	*/ 
 	private String menuName;
+	/**
+	* parentCode : 上级菜单
+	*/ 
 	private long parentCode;
+	/**
+	* menuUrl : 菜单url
+	*/ 
 	private String menuUrl;
+	/**
+	* note : 备注
+	*/ 
 	private String note;
-	private int delFlag;
-	private Long creator;
-	private Timestamp createTime;
-	private Long updater;
-	private Timestamp updateTime;
 
-	@Id
-	@Column(name = "id")
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
 
 	@Basic
 	@Column(name = "menu_code")
@@ -82,56 +83,6 @@ public class SmMenuEntity extends BaseEntity {
 		this.note = note;
 	}
 
-	@Basic
-	@Column(name = "del_flag")
-	public int getDelFlag() {
-		return delFlag;
-	}
-
-	public void setDelFlag(int delFlag) {
-		this.delFlag = delFlag;
-	}
-
-	@Basic
-	@Column(name = "creator")
-	public Long getCreator() {
-		return creator;
-	}
-
-	public void setCreator(Long creator) {
-		this.creator = creator;
-	}
-
-	@Basic
-	@Column(name = "create_time")
-	public Timestamp getCreateTime() {
-		return createTime;
-	}
-
-	public void setCreateTime(Timestamp createTime) {
-		this.createTime = createTime;
-	}
-
-	@Basic
-	@Column(name = "updater")
-	public Long getUpdater() {
-		return updater;
-	}
-
-	public void setUpdater(Long updater) {
-		this.updater = updater;
-	}
-
-	@Basic
-	@Column(name = "update_time")
-	public Timestamp getUpdateTime() {
-		return updateTime;
-	}
-
-	public void setUpdateTime(Timestamp updateTime) {
-		this.updateTime = updateTime;
-	}
-
 	@Override
 	public boolean equals(Object o) {
 		if (this == o)
@@ -141,45 +92,28 @@ public class SmMenuEntity extends BaseEntity {
 
 		SmMenuEntity that = (SmMenuEntity) o;
 
-		if (id != that.id)
-			return false;
 		if (menuCode != that.menuCode)
 			return false;
 		if (parentCode != that.parentCode)
-			return false;
-		if (delFlag != that.delFlag)
 			return false;
 		if (menuName != null ? !menuName.equals(that.menuName) : that.menuName != null)
 			return false;
 		if (menuUrl != null ? !menuUrl.equals(that.menuUrl) : that.menuUrl != null)
 			return false;
 		if (note != null ? !note.equals(that.note) : that.note != null)
-			return false;
-		if (creator != null ? !creator.equals(that.creator) : that.creator != null)
-			return false;
-		if (createTime != null ? !createTime.equals(that.createTime) : that.createTime != null)
-			return false;
-		if (updater != null ? !updater.equals(that.updater) : that.updater != null)
-			return false;
-		if (updateTime != null ? !updateTime.equals(that.updateTime) : that.updateTime != null)
-			return false;
 
+			return false;
 		return true;
 	}
 
 	@Override
 	public int hashCode() {
-		int result = (int) (id ^ (id >>> 32));
+		int result = 0;
 		result = 31 * result + (int) (menuCode ^ (menuCode >>> 32));
 		result = 31 * result + (menuName != null ? menuName.hashCode() : 0);
 		result = 31 * result + (int) (parentCode ^ (parentCode >>> 32));
 		result = 31 * result + (menuUrl != null ? menuUrl.hashCode() : 0);
 		result = 31 * result + (note != null ? note.hashCode() : 0);
-		result = 31 * result + delFlag;
-		result = 31 * result + (creator != null ? creator.hashCode() : 0);
-		result = 31 * result + (createTime != null ? createTime.hashCode() : 0);
-		result = 31 * result + (updater != null ? updater.hashCode() : 0);
-		result = 31 * result + (updateTime != null ? updateTime.hashCode() : 0);
 		return result;
 	}
 }
