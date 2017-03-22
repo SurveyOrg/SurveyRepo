@@ -9,8 +9,9 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name = "tc_payment")
-public class TcPaymentEntity {
-    private long id;
+public class TcPaymentEntity extends BaseEntity{
+	private static final long serialVersionUID = -6560627718365707698L;
+	private long id;
     private long executeId;
     private BigDecimal money;
     private int payStatus;

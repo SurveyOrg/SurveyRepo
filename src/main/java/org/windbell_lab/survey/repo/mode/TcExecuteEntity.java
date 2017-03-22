@@ -8,8 +8,9 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name = "tc_execute")
-public class TcExecuteEntity {
-    private long id;
+public class TcExecuteEntity extends BaseEntity{
+	private static final long serialVersionUID = 2888432303139607285L;
+	private long id;
     private long applyId;
     private int executeStatus;
     private int delFlag;

@@ -8,8 +8,9 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name = "cm_channel_group_detail")
-public class CmChannelGroupDetailEntity {
-    private long id;
+public class CmChannelGroupDetailEntity extends BaseEntity{
+	private static final long serialVersionUID = 429968509704142333L;
+	private long id;
     private long groupCode;
     private long channelCode;
     private int isSelected;

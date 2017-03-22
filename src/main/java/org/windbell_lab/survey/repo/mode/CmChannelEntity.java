@@ -8,11 +8,24 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name = "cm_channel")
-public class CmChannelEntity {
-    private long id;
+public class CmChannelEntity extends BaseEntity{
+	private static final long serialVersionUID = -6989104356513300309L;
+	private long id;
+    /**
+    * channelCode : 渠道
+    */ 
     private long channelCode;
+    /**
+    * channelName : 渠道名称
+    */ 
     private String channelName;
+    /**
+    * type : 渠道类型
+    */ 
     private long type;
+    /**
+    * company : 部门
+    */ 
     private long company;
     private int delFlag;
     private Long creator;

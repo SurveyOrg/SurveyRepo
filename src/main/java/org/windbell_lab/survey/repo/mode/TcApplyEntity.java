@@ -9,8 +9,9 @@ import java.sql.Timestamp;
  */
 @Entity
 @Table(name = "tc_apply")
-public class TcApplyEntity {
-    private long id;
+public class TcApplyEntity extends BaseEntity{
+	private static final long serialVersionUID = -2181101647637669850L;
+	private long id;
     private long publishId;
     private long surveyorCode;
     private long channelCode;
