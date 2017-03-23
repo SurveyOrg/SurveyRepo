@@ -115,4 +115,13 @@ public class UmSurveyorInfoEntity extends BaseEntity {
 		
 		return result;
 	}
+
+	@Override
+	public String toString() {
+		return String.format(
+				"UmSurveyorInfoEntity [surveyorCode=%s, surveyorName=%s, provinceCode=%s, cityCode=%s, countyCode=%s, getId()=%s, getVersion()=%s, getDelFlag()=%s, getCreator()=%s, getCreateTime()=%s, getUpdater()=%s, getUpdateTime()=%s]",
+				surveyorCode, surveyorName, provinceCode, cityCode, countyCode, getId(), getVersion(), getDelFlag(),
+				getCreator(), getCreateTime(), getUpdater(), getUpdateTime());
+	}
+	
 }

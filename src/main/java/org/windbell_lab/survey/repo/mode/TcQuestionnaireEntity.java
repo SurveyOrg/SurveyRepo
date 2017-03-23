@@ -63,4 +63,13 @@ public class TcQuestionnaireEntity extends BaseEntity {
 		result = 31 * result + (questionName != null ? questionName.hashCode() : 0);
 		return result;
 	}
+
+	@Override
+	public String toString() {
+		return String.format(
+				"TcQuestionnaireEntity [questionCode=%s, questionName=%s, getId()=%s, getVersion()=%s, getDelFlag()=%s, getCreator()=%s, getCreateTime()=%s, getUpdater()=%s, getUpdateTime()=%s]",
+				questionCode, questionName, getId(), getVersion(), getDelFlag(), getCreator(), getCreateTime(),
+				getUpdater(), getUpdateTime());
+	}
+	
 }

@@ -64,4 +64,13 @@ public class CmChannelGroupEntity extends BaseEntity {
 		result = 31 * result + (groupName != null ? groupName.hashCode() : 0);
 		return result;
 	}
+
+	@Override
+	public String toString() {
+		return String.format(
+				"CmChannelGroupEntity [groupCode=%s, groupName=%s, getId()=%s, getVersion()=%s, getDelFlag()=%s, getCreator()=%s, getCreateTime()=%s, getUpdater()=%s, getUpdateTime()=%s]",
+				groupCode, groupName, getId(), getVersion(), getDelFlag(), getCreator(), getCreateTime(), getUpdater(),
+				getUpdateTime());
+	}
+	
 }

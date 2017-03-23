@@ -79,4 +79,13 @@ public class TcQuestionItemEntity extends BaseEntity {
 		result = 31 * result + (itemName != null ? itemName.hashCode() : 0);
 		return result;
 	}
+
+	@Override
+	public String toString() {
+		return String.format(
+				"TcQuestionItemEntity [questionCode=%s, itemCode=%s, itemName=%s, getId()=%s, getVersion()=%s, getDelFlag()=%s, getCreator()=%s, getCreateTime()=%s, getUpdater()=%s, getUpdateTime()=%s]",
+				questionCode, itemCode, itemName, getId(), getVersion(), getDelFlag(), getCreator(), getCreateTime(),
+				getUpdater(), getUpdateTime());
+	}
+	
 }

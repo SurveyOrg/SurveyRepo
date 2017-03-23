@@ -115,4 +115,13 @@ public class SmDictEntity extends BaseEntity {
 		result = 31 * result + (int) (parentCode ^ (parentCode >>> 32));
 		return result;
 	}
+
+	@Override
+	public String toString() {
+		return String.format(
+				"SmDictEntity [groupCode=%s, groupValue=%s, itemCode=%s, itemValue=%s, parentCode=%s, getId()=%s, getVersion()=%s, getDelFlag()=%s, getCreator()=%s, getCreateTime()=%s, getUpdater()=%s, getUpdateTime()=%s]",
+				groupCode, groupValue, itemCode, itemValue, parentCode, getId(), getVersion(), getDelFlag(),
+				getCreator(), getCreateTime(), getUpdater(), getUpdateTime());
+	}
+	
 }

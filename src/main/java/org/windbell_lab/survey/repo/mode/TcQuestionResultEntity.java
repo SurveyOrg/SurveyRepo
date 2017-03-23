@@ -65,4 +65,13 @@ public class TcQuestionResultEntity extends BaseEntity {
 		result = 31 * result + (optionValue != null ? optionValue.hashCode() : 0);
 		return result;
 	}
+
+	@Override
+	public String toString() {
+		return String.format(
+				"TcQuestionResultEntity [optionCode=%s, optionValue=%s, getId()=%s, getVersion()=%s, getDelFlag()=%s, getCreator()=%s, getCreateTime()=%s, getUpdater()=%s, getUpdateTime()=%s]",
+				optionCode, optionValue, getId(), getVersion(), getDelFlag(), getCreator(), getCreateTime(),
+				getUpdater(), getUpdateTime());
+	}
+	
 }

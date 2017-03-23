@@ -84,4 +84,13 @@ public class TcPaymentEntity extends BaseEntity {
 		result = 31 * result + payStatus;
 		return result;
 	}
+
+	@Override
+	public String toString() {
+		return String.format(
+				"TcPaymentEntity [executeId=%s, money=%s, payStatus=%s, getId()=%s, getVersion()=%s, getDelFlag()=%s, getCreator()=%s, getCreateTime()=%s, getUpdater()=%s, getUpdateTime()=%s]",
+				executeId, money, payStatus, getId(), getVersion(), getDelFlag(), getCreator(), getCreateTime(),
+				getUpdater(), getUpdateTime());
+	}
+	
 }

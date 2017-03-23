@@ -83,4 +83,13 @@ public class CmChannelGroupDetailEntity extends BaseEntity {
 		result = 31 * result + isSelected;
 		return result;
 	}
+
+	@Override
+	public String toString() {
+		return String.format(
+				"CmChannelGroupDetailEntity [groupCode=%s, channelCode=%s, isSelected=%s, getId()=%s, getVersion()=%s, getDelFlag()=%s, getCreator()=%s, getCreateTime()=%s, getUpdater()=%s, getUpdateTime()=%s]",
+				groupCode, channelCode, isSelected, getId(), getVersion(), getDelFlag(), getCreator(), getCreateTime(),
+				getUpdater(), getUpdateTime());
+	}
+	
 }
