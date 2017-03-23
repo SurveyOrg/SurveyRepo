@@ -8,6 +8,7 @@ import java.sql.Timestamp;
  * Created by morning on 2017/3/20.
  * 酬金信息表
  */
+@Entity
 @Table(name = "tc_payment")
 public class TcPaymentEntity extends BaseEntity {
 	private static final long serialVersionUID = -6560627718365707698L;
