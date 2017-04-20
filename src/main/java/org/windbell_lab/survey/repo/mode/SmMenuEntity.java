@@ -116,4 +116,13 @@ public class SmMenuEntity extends BaseEntity {
 		result = 31 * result + (note != null ? note.hashCode() : 0);
 		return result;
 	}
+
+	@Override
+	public String toString() {
+		return String.format(
+				"SmMenuEntity [menuCode=%s, menuName=%s, parentCode=%s, menuUrl=%s, note=%s, getId()=%s, getVersion()=%s, getDelFlag()=%s, getCreator()=%s, getCreateTime()=%s, getUpdater()=%s, getUpdateTime()=%s]",
+				menuCode, menuName, parentCode, menuUrl, note, getId(), getVersion(), getDelFlag(), getCreator(),
+				getCreateTime(), getUpdater(), getUpdateTime());
+	}
+	
 }

@@ -118,4 +118,13 @@ public class TcApplyEntity extends BaseEntity {
 		result = 31 * result + applyStatus;
 		return result;
 	}
+
+	@Override
+	public String toString() {
+		return String.format(
+				"TcApplyEntity [publishId=%s, surveyorCode=%s, channelCode=%s, price=%s, applyStatus=%s, getId()=%s, getVersion()=%s, getDelFlag()=%s, getCreator()=%s, getCreateTime()=%s, getUpdater()=%s, getUpdateTime()=%s]",
+				publishId, surveyorCode, channelCode, price, applyStatus, getId(), getVersion(), getDelFlag(),
+				getCreator(), getCreateTime(), getUpdater(), getUpdateTime());
+	}
+	
 }

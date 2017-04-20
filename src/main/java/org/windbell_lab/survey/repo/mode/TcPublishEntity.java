@@ -67,4 +67,13 @@ public class TcPublishEntity extends BaseEntity {
 		result = 31 * result + publishStatus;
 		return result;
 	}
+
+	@Override
+	public String toString() {
+		return String.format(
+				"TcPublishEntity [questionCode=%s, publishStatus=%s, getId()=%s, getVersion()=%s, getDelFlag()=%s, getCreator()=%s, getCreateTime()=%s, getUpdater()=%s, getUpdateTime()=%s]",
+				questionCode, publishStatus, getId(), getVersion(), getDelFlag(), getCreator(), getCreateTime(),
+				getUpdater(), getUpdateTime());
+	}
+	
 }

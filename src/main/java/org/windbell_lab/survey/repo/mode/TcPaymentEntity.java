@@ -8,6 +8,7 @@ import java.sql.Timestamp;
  * Created by morning on 2017/3/20.
  * 酬金信息表
  */
+@Entity
 @Table(name = "tc_payment")
 public class TcPaymentEntity extends BaseEntity {
 	private static final long serialVersionUID = -6560627718365707698L;
@@ -83,4 +84,13 @@ public class TcPaymentEntity extends BaseEntity {
 		result = 31 * result + payStatus;
 		return result;
 	}
+
+	@Override
+	public String toString() {
+		return String.format(
+				"TcPaymentEntity [executeId=%s, money=%s, payStatus=%s, getId()=%s, getVersion()=%s, getDelFlag()=%s, getCreator()=%s, getCreateTime()=%s, getUpdater()=%s, getUpdateTime()=%s]",
+				executeId, money, payStatus, getId(), getVersion(), getDelFlag(), getCreator(), getCreateTime(),
+				getUpdater(), getUpdateTime());
+	}
+	
 }

@@ -93,4 +93,13 @@ public class CmChannelEntity extends BaseEntity{
         result = 31 * result + (int) (company ^ (company >>> 32));
         return result;
     }
+
+	@Override
+	public String toString() {
+		return String.format(
+				"CmChannelEntity [channelCode=%s, channelName=%s, type=%s, company=%s, getId()=%s, getVersion()=%s, getDelFlag()=%s, getCreator()=%s, getCreateTime()=%s, getUpdater()=%s, getUpdateTime()=%s]",
+				channelCode, channelName, type, company, getId(), getVersion(), getDelFlag(), getCreator(),
+				getCreateTime(), getUpdater(), getUpdateTime());
+	}
+    
 }

@@ -67,4 +67,13 @@ public class TcExecuteEntity extends BaseEntity {
 		result = 31 * result + executeStatus;
 		return result;
 	}
+
+	@Override
+	public String toString() {
+		return String.format(
+				"TcExecuteEntity [applyId=%s, executeStatus=%s, getId()=%s, getVersion()=%s, getDelFlag()=%s, getCreator()=%s, getCreateTime()=%s, getUpdater()=%s, getUpdateTime()=%s]",
+				applyId, executeStatus, getId(), getVersion(), getDelFlag(), getCreator(), getCreateTime(),
+				getUpdater(), getUpdateTime());
+	}
+	
 }
